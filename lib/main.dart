@@ -24,9 +24,9 @@ class MyApp extends StatelessWidget {
       title: 'Lutfil URL tool',
       theme: ThemeData(
         
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
+        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
-      home: const MyHomePage(title: 'Lutfil URL tool homepage'),
+      home: const MyHomePage(title: 'URL tool'),
     );
   }
 }

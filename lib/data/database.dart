@@ -16,8 +16,8 @@ class UrlDatabase{
 
     //list structure ,[original_url,shorten_url,id]
     urlList = [
-      ["pendek.net/sqrT6y","google.com","lutfil@gmail.com"],
-      ["pendek.net/sqrfGh","youtube.com","hadi@gmail.com"],
+      ["pendek.net/sqrT6y","google.com","lutfil@gmail.com",false],
+      ["pendek.net/sqrfGh","youtube.com","hadi@gmail.com",false],
 
     ];
   }
