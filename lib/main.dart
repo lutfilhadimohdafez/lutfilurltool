@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:hive_flutter/adapters.dart';
 import 'package:lutfilurltool/screens/home_page.dart';
 
 void main() async {
+
+  //initialize hive local database
+  await Hive.initFlutter();
+
+  //open box from hive
+  var box = await Hive.openBox('mybox');
+
   runApp(const MyApp());
 }
 
@@ -12,12 +20,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Lutfil URL tool',
       theme: ThemeData(
         
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'Lutfil URL tool homepage'),
     );
   }
 }
