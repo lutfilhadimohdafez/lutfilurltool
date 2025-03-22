@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:lutfilurltool/data/database.dart';
+import 'package:lutfilurltool/utilities/dialog_box.dart';
 import 'package:lutfilurltool/utilities/url_tiles.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -41,7 +42,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void shortedUrl(bool? value, int index) {
     setState(() {
-      //leave it here to check if the short url available or not
+      //TODO:leave it here to check if the short url available or not
+    });
+  }
+
+  void createNewURL(){
+    showDialog(context: context, builder: (context){
+      return DialogBox();
+
     });
   }
 
@@ -72,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: createNewURL,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
