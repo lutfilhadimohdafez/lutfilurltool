@@ -51,34 +51,39 @@ class UrlTile extends StatelessWidget {
         child: Row(
           spacing: 10,
           children: [
-            Container(
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.black),
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(6),
+            Flexible(
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                padding: EdgeInsets.all(7),
+                child: Text(originalUrl),
               ),
-              padding: EdgeInsets.all(7),
-              child: Text(originalUrl),
             ),
 
-            Container(
-              
-              padding: EdgeInsets.all(7),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.black),
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(6),
+            Flexible(
+              child: Container(
+                padding: EdgeInsets.all(7),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: Text(shortenUrl),
               ),
-              child: Text(shortenUrl),
             ),
-            Container(
-              padding: EdgeInsets.all(7),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.black),
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(6),
+            Flexible(
+              child: Container(
+                padding: EdgeInsets.all(7),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.black),
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(6),
+                ),
+                child: Text(email),
               ),
-              child: Text(email),
             ),
             Checkbox(value: shortedUrl, onChanged: onChanged),
           ],
