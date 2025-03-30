@@ -46,11 +46,13 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  void createNewURL(){
-    showDialog(context: context, builder: (context){
-      return DialogBox();
-
-    });
+  void createNewURL() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return DialogBox();
+      },
+    );
   }
 
   @override
@@ -63,11 +65,37 @@ class _MyHomePageState extends State<MyHomePage> {
         elevation: 8,
         shadowColor: Colors.black,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(12))
+          borderRadius: BorderRadius.all(Radius.circular(12)),
         ),
-        
+
         title: Text(widget.title),
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              icon: const Icon(Icons.menu),
+            );
+          },
+        ),
       ),
+
+      //drawer
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(decoration: BoxDecoration(color: Colors.blue),child: Text("Menu"),),
+            ListTile(title: const Text('Profile'),onTap: () => (){},),
+            ListTile(title: const Text('Settings'),onTap: () => (){},),
+          ],
+        ),
+      ),
+
+
+
+      //below list view for url
       body: ListView.builder(
         itemCount: db.urlList.length,
         itemBuilder: (context, index) {
