@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:lutfilurltool/screens/home_page.dart';
+import 'package:lutfilurltool/screens/settings_page.dart';
+import 'package:lutfilurltool/screens/urlshorter_page.dart';
 
 void main() async {
-
   //initialize hive local database
   await Hive.initFlutter();
 
@@ -23,11 +24,15 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Lutfil URL tool',
       theme: ThemeData(
-        
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
+        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
       ),
-      home: const MyHomePage(title: 'Lutfil URL tool homepage'),
+      initialRoute: "/",
+      //home: const MyHomePage(title: 'URL tool'),
+      routes: {
+        "/": (context) => MyHomePage(title: "Lutfil's URL Tool"),
+        "/urlshorter": (context) => UrlshorterPage(),
+        "/settings": (context) => SecondScreen(),
+      },
     );
   }
 }
-
