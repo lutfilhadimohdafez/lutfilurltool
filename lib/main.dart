@@ -29,8 +29,9 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       //home: const MyHomePage(title: 'URL tool'),
       routes: {
-        "/": (context) => MyHomePage(title: "Lutfil's URL Tool"),
-        "/urlshorter": (context) => UrlshorterPage(),
+        //"/": (context) => MyHomePage(title: "Lutfil's URL Tool"),
+        "/": (context)=> UrlshorterPage(),
+        //"/urlshorter": (context) => UrlshorterPage(),
         "/settings": (context) => SecondScreen(),
       },
     );
